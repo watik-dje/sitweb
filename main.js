@@ -96,25 +96,31 @@ if(window.matchMedia("(max-width:992px)").matches){
                 </a>
             </div>
             <ul class="list">
-                <li>
+                <li id ="index.html">
                     <i class="fa-solid fa-house"></i>
                     <a href="index.html">home</a>
                 </li>
-                <li>
+                <li id ="calendar.html">
                     <i class="fa-solid fa-calendar-days"></i>
                     <a href="calendar.html">calendar time</a>
                 </li>
-                <li>
+                <li id="otherCountries.html">
                     <i class="fa-solid fa-earth-americas"></i>
-                    <a href="otherCountries.html">other countries</a>
+                    <a>other countries</a>
                 </li>
-                <li>
+                <li id="contactus.html"> 
                     <i class="fa-solid fa-address-book"></i>
-                    <a href="contactus.html">contact us</a>
+                    <a>contact us</a>
                 </li>
             </ul>
         </div>`;
     let list = document.querySelector(".sections header .container .links > div .more")
+    let list1 = document.querySelector(".sections header .container .links > div .list")
+    for(let i = 0 ; i < list1.children.length ; i++){
+        list1.children[i].onclick = function(){
+            location.href = list1.children[i].id
+        }
+    }
     list.addEventListener("click",()=>{
         document.querySelector(".sections header .container .links > div .list").classList.toggle("show")
     })
