@@ -642,7 +642,7 @@ ul{
 /* start contact */
 .contact{
     height: 100vh;
-    background-image: url(/contact.png);
+    background-image: url(../contact.png);
     background-size: 100%;
     background-position: 0;
     position: relative;
