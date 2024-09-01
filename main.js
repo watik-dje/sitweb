@@ -4,7 +4,7 @@ let sound = false
 function getDataOfPositions(id) {
     let mainLink = document.querySelector(".sections header .container .location .earth > div > li .main-link");
     let list = document.querySelector(".sections header .container .location .earth .list");
-    axios.get("json/countries.json").then((data)=>{
+    axios.get("countries.json").then((data)=>{
         let responses = data.data
         mainLink.textContent = responses[id].country.name
         mainLink.setAttribute("data-id" , responses[id].id)
@@ -192,7 +192,7 @@ effects()
 // ----------------start content-------------------
 // start muadinin
 function getMuadinin(id){
-    axios.get("json/muazin.json").then((response)=>{
+    axios.get("muazin.json").then((response)=>{
         let list = document.querySelector(".main-section .content aside ul")
         let data = response.data
         list.innerHTML =""
