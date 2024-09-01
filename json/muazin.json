@@ -1,0 +1,58 @@
+[
+    {
+        "muaadin" : "Adhan Masjid Al-Haram",
+        "muaadin_ar" : "آذان الحرم المكي",
+        "audio_src": "Mecca.mp3",
+        "image_src": "Mecca Mosque.jpg",
+        "value":"mecca",
+        "id":1
+    },
+    {
+        "muaadin" : "Mishary Al afasy",
+        "muaadin_ar" : "آذان مشاري العفاسي ",
+        "audio_src": "Mishary Alafasy.mp3",
+        "image_src": "al Afasy.jpg",
+        "value":"afasy",
+        "id":2
+    },
+    {
+        "muaadin" : "Ahmad Al Nafees",
+        "muaadin_ar" : "آذان أحمد النفيس",
+        "audio_src": "Ahmad Al Nafees.mp3",
+        "image_src": "Ahmad Al Nafees.jpg",
+        "value":"nafees",
+        "id":3
+    },
+    {
+        "muaadin" : "Qari Abdul kareem",
+        "muaadin_ar" : "آذان الفارئ عبد الكريم",
+        "audio_src": "Qari Abdul kareem.mp3",
+        "image_src": "Abdul kareem.jpg",
+        "value":"kareem",
+        "id":4
+    },
+    {
+        "muaadin" : "Hafiz Mustafa Özcan",
+        "muaadin_ar" : "آذان حافظ مصطفى أوزكان التركي",
+        "audio_src": "Hafiz Mustafa Özcan.mp3",
+        "image_src": "Mustafa Özcan.jpg",
+        "value":"mustafa",
+        "id":5
+    },
+    {
+        "muaadin" : "Mansoor Az-Zahrani",
+        "muaadin_ar" : "آذان منصور الزهراني",
+        "audio_src": "Salah Mansoor Az-Zahrani.mp3",
+        "image_src": "Mansoor Az-Zahrani.jpg",
+        "value":"mansoor",
+        "id":6
+    },
+    {
+        "muaadin" : "Sheikh Jamac Hareed",
+        "muaadin_ar" : "آذان الشيخ جامع حريد",
+        "audio_src": "Sheikh Jamac Hareed.mp3",
+        "image_src": "Sheikh Jamac Hareed.jpg",
+        "value":"hareed",
+        "id":7
+    }
+]

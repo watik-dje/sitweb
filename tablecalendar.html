@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- render all elements normally -->
+        <link rel="stylesheet" href="css/normalize.css">
+        <!-- font awesome library -->
+        <link rel="stylesheet" href="css/all.min.css">
+        <!--  main template css file -->
+        <link rel="stylesheet" href="css/calendar.css">
+        <!-- arabic google fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Fira+Sans+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Zain:wght@200;300;400;700;800;900&display=swap" rel="stylesheet">
+        <!-- english google fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Fira+Sans+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Zain:wght@200;300;400;700;800;900&display=swap" rel="stylesheet">
+        <!-- icon -->
+        <link rel="icon" href="calendar-days-solid.svg">
+        <!-- axios -->
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+        <title>Calendar Prayer Time</title>
+    <style>
+            /* start calendar prayers time table*/
+            ::-webkit-scrollbar ,
+            .calendar .table::-webkit-scrollbar{
+                width: 11px;
+            }
+            ::-webkit-scrollbar-thumb{
+                background-color: #d58c06;
+            }
+            .calendar{
+                height: 100%;
+                overflow: visible;
+                user-select: none;
+                background-color: #47463d;
+            }
+            .calendar video{
+                top: 0;
+            }
+            .calendar .container .title{
+                margin: 0 0 30px;
+                padding-top: 20px;
+            }
+            .calendar .table{
+                overflow: auto;
+                box-shadow: 0 0 5px 0 #dbbb7f;
+                display: flex;
+            }
+            .calendar .table table{
+                min-width: 1000px;
+                outline: none;
+                flex-grow: 1;
+            }
+            .calendar .table table tr td{
+                font-size: 16px;
+                padding: 7px;
+                color: #ffdfa3;
+                font-weight: 700;
+                text-transform: capitalize;
+                text-align: center;
+            }
+            .calendar .table table thead tr td{
+                font-size: 18px;
+                font-weight: 700;
+                padding: 10px;
+                color: #ffc65c;
+                text-align: center;
+            }
+            .calendar .table table tr:nth-child(even){
+                background-color: rgba(0, 0, 0, 0.288);
+            }
+            .calendar .table table tr:nth-child(odd){
+                background-color: rgba(51, 51, 51, 0.336);
+            }
+            .calendar .table table thead tr ,
+            .calendar .table table thead tr td{
+                background-color: rgba(0, 0, 0, 0.288);
+            }
+            @media (max-aspect-ratio:16/9) {
+                .calendar video{
+                    height: 100vh;
+                    width: auto;
+                }
+            }
+            @media (max-width: 500px) {
+                .calendar video{
+                    right: 0;
+                    transform: translateX(0);
+                }
+            }
+            /* end calendar prayers time table*/
+    </style>
+</head>
+<body>
+    <div class="calendar">
+        <video src="personPraying.mp4" muted autoplay loop></video>
+        <div class="container">
+            <div class="title">
+                <i class="fa-solid fa-calendar-days"></i>
+                <h1>calendar prayer time</h1>
+            </div>
+            <div class="table">
+                <table>
+                    <thead>
+                        <tr>
+                            <td>date</td>
+                            <td>fajr</td>
+                            <td>sunrise</td>
+                            <td>dhuhr</td>
+                            <td>asr</td>
+                            <td>sunset</td>
+                            <td>maghrib</td>
+                            <td>isha</td>
+                            <td>midnight</td>
+                        </tr>
+                    </thead>
+                    <tr>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    let response = JSON.parse(sessionStorage.getItem("data")) 
+    console.log(response)
+    let td = document.querySelector(".calendar .table table tbody")
+    td.innerHTML = ""
+    for(let i = 0 ; i < response.length ;i++){
+        let content = `
+            <tr>
+                <td>${response[i].date.readable}</td>
+                <td>${response[i].timings.Fajr}</td>
+                <td>${response[i].timings.Sunrise}</td>
+                <td>${response[i].timings.Dhuhr}</td>
+                <td>${response[i].timings.Asr}</td>
+                <td>${response[i].timings.Sunset}</td>
+                <td>${response[i].timings.Maghrib}</td>
+                <td>${response[i].timings.Isha}</td>
+                <td>${response[i].timings.Midnight}</td>
+            </tr>
+        `
+        td.innerHTML += content
+    }
+</script>
+</html>

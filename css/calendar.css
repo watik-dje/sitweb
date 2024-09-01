@@ -1,0 +1,219 @@
+/* start variables */
+:root{
+    --main-color:#2d9d79;
+    --secondary-color:#bababa;
+    --background-color:#a0a0a0;
+    --orange:#d58c06;
+}
+/* end variables */
+/* start global rules */
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+h1,h2,h3,h4,h5,h6{
+    margin: 0;
+}
+html{
+    scroll-behavior: smooth;
+}
+body{
+    font-family: 'Noto sans', sans-serif;
+}
+ul{
+    list-style: none;
+}
+.container{
+    padding-left: 15px;
+    padding-right: 15px;
+    margin: auto;
+}
+@media (min-width : 768px){
+    .container{
+        width: 750px;
+    }
+}
+@media (min-width : 992px){
+    .container{
+        width: 970px;
+    }
+}
+@media (min-width : 1200px){
+    .container{
+        width: 1170px;
+    }
+}
+/* end global rules */
+/* start edit background video*/
+.calendar{
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    height: 100vh;
+}
+.calendar video{
+    z-index: -100;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+.calendar::after{
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -99;
+    background-color: rgba(0, 0, 0, 0.438);
+}
+@media (max-aspect-ratio:16/9) {
+    .calendar video{
+        height: 100%;
+        width: auto;
+    }
+}
+@media (max-width: 500px) {
+    .calendar video{
+        right: 80%;
+        transform: translateX(50%);
+    }
+}
+/* end edit background video*/
+/* start data */
+.calendar .container .title{
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    margin: 30px 0 0 0;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--background-color);
+}
+.calendar .container .title i{
+    font-size: 1.3em;
+    margin-right: 10px;
+    color: var(--orange);
+}
+.calendar .container .title h1{
+    color: var(--secondary-color);
+    text-transform: capitalize;
+    letter-spacing: -1px;
+    text-shadow: 0 1px 20px var(--orange);
+    font-size: 1.2em;
+}
+.calendar .container .data{
+    height: calc(100vh - 130px);
+    display: grid;
+    align-items: center;
+}
+.calendar .container .data form{
+    display: grid;
+    grid-template-columns: repeat(auto-fill , minmax(calc(50% - 20px) , 1fr));
+    gap: 20px;
+}
+.calendar .container .data form div select ,
+.calendar .container .data form div input{
+    width: 100%;
+    outline: none;
+    padding: 10px;
+    text-transform: capitalize;
+    font-weight: 700;
+    border: 2px solid #6f5527;
+    color: #6f5527;
+    box-shadow: 0 1px 10px 1px wheat;
+    font-size: 0.8em;
+}
+.calendar .container .data form div select{
+    cursor: pointer;
+}
+.calendar .container .data form div select option{
+    appearance: none;
+    font-size: 1em;
+    font-weight: 700;
+    padding: 10px;
+    width: 200px;
+    cursor: pointer;
+}
+.calendar .container .data form div:has(input){
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.calendar .container .data form div input::placeholder{
+    color: #6f5527;
+    font-size: 0.9em;
+    font-weight: 800;
+}
+.calendar .container .data form div label{
+    display: block;
+    text-transform: capitalize;
+    font-size: 1em;
+    font-weight: 700;
+    color: #f7d28c;
+    text-shadow: 0 0 6px #e3a42d;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+    user-select: none;
+}
+.calendar .container .data form #submit{
+    display: block;
+    width: fit-content;
+    text-transform: capitalize;
+    margin: 20px auto 0;
+    grid-column: 1 /-1;
+    padding: 10px;
+    border: none;
+    background-color: #dbbb7f ;
+    color: #6f5527;
+    font-weight: 600;
+    box-shadow: 0 0 15px 1px #dbbb7f;
+    cursor: pointer;
+}
+@media (max-width: 450px) {
+    .calendar .container .title{
+        font-size: 15px;
+    }
+    .calendar .container .data form div input{
+        font-size: 0.6em;
+    }
+    .calendar .container .data form div label{
+        font-size: 13px;
+    }
+    .calendar .container .data form div select{
+        padding: 5px 10px;
+    }
+}
+.calendar .error{
+    background-color: rgb(255 127 127 / 61%);
+    position: absolute;
+    z-index: -2;
+    top: -25px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-bottom: 2px solid #b70000;
+    display: flex;
+    padding: 7px 10px;
+    align-items: center;
+    transition: 0.3s;
+    opacity: 0;
+}
+.calendar .error.show{
+    opacity: 1;
+    top: 0;
+}
+.calendar .error i ,
+.calendar .error h3{
+    font-size: 16px;
+}
+.calendar .error h3{
+    color: #8f0000;
+    text-transform: capitalize;
+    letter-spacing: -1px;
+}
+.calendar .error i{
+    margin-right: 5px;
+    color: #8d0000;
+}
+/* end data */

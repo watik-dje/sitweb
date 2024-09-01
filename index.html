@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- render all elements normally -->
+    <link rel="stylesheet" href="css/normalize.css">
+    <!-- font awesome library -->
+    <link rel="stylesheet" href="css/all.min.css">
+    <!--  main template css file -->
+    <link rel="stylesheet" href="css/headerComponent.css">
+    <link rel="stylesheet" href="css/style.css">
+    <!-- arabic google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Sans+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Zain:wght@200;300;400;700;800;900&display=swap" rel="stylesheet">
+    <!-- english google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Sans+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Zain:wght@200;300;400;700;800;900&display=swap" rel="stylesheet">
+    <!-- web icon -->
+    <link rel="icon" href="mosque-solid.svg">
+    <!-- axios -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <title>Prayers Time</title>
+</head>
+<body>
+    <div class="main-section sections">
+        <video loop autoplay muted>
+            <source src="mosque/Algeria.mp4" type="video/mp4">
+        </video>
+        <header>
+            <div class="adhan">
+                
+            </div>
+            <div class="container">
+                <i class="fa-solid fa-mosque main-icon"></i>
+                <div class="location">
+                    <div class="earth">
+                        <div>
+                            <i class="fa-solid fa-location-dot"></i>
+                            <li>
+                                <a class="main-link" data-id=""></a>
+                            </li>
+                            <i class="fa-solid fa-angle-down"></i>
+                        </div>
+                        <ul class="list"></ul>
+                    </div>
+                </div>
+                <div class="links">
+                    <div>
+                        <i class="fa-solid fa-house"></i>
+                        <a href="index.html">home</a>
+                    </div>
+                    <div>
+                        <i class="fa-solid fa-calendar-days"></i>
+                        <a target="_blank" href="calendar.html">calendar prayer time</a>
+                    </div>
+                    <div>
+                        <i class="fa-solid fa-location-dot"></i>
+                        <a target="_blank" href="otherCountries.html">other countries</a>
+                    </div>
+                    <div>
+                        <i class="fa-solid fa-address-book"></i>
+                        <a target="_blank" href="contactus.html">contact us</a>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <div class="effects">
+            <div class="container">
+                <div class="main-title">
+                    <div>
+                        <img src="praying.png" alt="">
+                    </div>
+                    <h1 class="title"></h1>
+                </div>
+                <div class="traduction">
+                    <div>
+                        <i class="fa-solid fa-globe"></i>
+                        <i class="fa-solid fa-angle-down"></i> 
+                        <ul>
+                            <li class="selected">
+                                <i class="fa-solid fa-globe"></i>
+                                english
+                            </li>
+                            <li>
+                                <i class="fa-solid fa-globe"></i>
+                                arabic
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <i class="fa-solid fa-moon"></i>
+                        <div>
+                            <i class="fa-solid fa-angles-down"></i>
+                            <i class="fa-solid fa-volume-xmark"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="content">
+            <nav>
+                <i class="fa-solid fa-map-location-dot"></i>
+                <h3>cities of algeria</h3>
+                <div>
+                    <ul>
+                    </ul>
+                </div>
+            </nav>
+            <div class="times">
+                <div>
+                    <h4 class="day"></h4>
+                    <div class="prayers-time">
+                    <ul>
+                    </ul>
+                    </div>
+                    <h4 class="hours">
+                    </h4>
+                </div>
+            </div>
+            <aside>
+                <img class="image" src="adzan.png" alt="">
+                <h5>muadinin</h5>
+                <ul>
+                </ul>
+            </aside>
+        </div>
+    </div>
+    <script src="main.js"></script>
+</body>
+</html>

@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- render all elements normally -->
+    <link rel="stylesheet" href="css/normalize.css">
+    <!-- font awesome library -->
+    <link rel="stylesheet" href="css/all.min.css">
+    <!--  main template css file -->
+    <link rel="stylesheet" href="css/calendar.css">
+    <!-- arabic google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Sans+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Zain:wght@200;300;400;700;800;900&display=swap" rel="stylesheet">
+    <!-- english google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Sans+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Zain:wght@200;300;400;700;800;900&display=swap" rel="stylesheet">
+    <!-- icon -->
+    <link rel="icon" href="location.svg">
+    <!-- axios -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <title>Other Cities</title>
+    <style>
+        .calendar{
+            background-image: url(masjid.png);
+            background-position: center center;
+            background-size: 100% auto;
+        }
+        ::selection{
+            background-color: wheat;
+        }
+        .calendar .container .times{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: calc(100vh - 150px);
+        }
+        .calendar .container .times > div{
+            width: 100%;
+        }
+        .calendar .container .times > div h4{
+            background-color: rgba(0, 0, 0, 0.26);
+            width: fit-content;
+            margin: 0 auto 20px auto;
+            padding: 10px 20px;
+            font-size: 20px;
+            text-transform: capitalize;
+            font-weight: 700;
+            color: #ffd27f;
+            border-radius: 1000px;
+        }
+        .calendar .container .times > div .prayers-time{
+            margin: auto;
+            background-color: rgba(0, 0, 0, 0.384);
+            border-radius: 6px;
+            padding: 10px 20px;
+        }
+        .calendar .container .times > div .prayers-time ul li{
+            text-transform: capitalize;
+            padding: 0 20px;
+        }
+        .calendar .container .times > div .prayers-time ul li h5{
+            display: inline-block;
+            color: #ffd27f;
+            font-size: 19px;
+            width: 50%;
+            text-shadow: 0 0 10px #bdbdbd;
+        }
+        .calendar .container .times > div .prayers-time ul li p{
+            color: #c07cff;
+            font-weight: 700;
+            font-size: 19px;
+            display: inline-block;
+            text-shadow: 0 0 10px #a5a5a4;
+        }
+        .calendar .container .times > div .prayers-time ul li:not(:last-child){
+            border-bottom: 2px solid #bababa;
+            margin-bottom: 10px;
+            padding-bottom: 10px;
+        }
+        .calendar .container .go{
+            margin-top: 10px;
+            font-weight: 900;
+            font-size: 20px;
+            color: #7e5304;
+            background-color: wheat;
+            padding: 5px 10px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: none;
+        }
+        @media (max-aspect-ratio : 16/9) {
+            .calendar{
+                background-size: auto;
+                background-position: 70% 50%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="calendar">
+        <div class="error">
+            <i class="fa-solid fa-triangle-exclamation"></i>
+            <h3>enter country and city !</h3>
+        </div>
+        <div class="container">
+            <div class="title">
+                <i class="fa-solid fa-location-dot"></i>
+                <h1>other countries</h1>
+            </div>
+            <i class="fa-solid fa-angle-left go"></i>
+            <div class="times" style="display: none;">
+                <div>
+                    <h4 class="day">31 aug 2024</h4>
+                    <div class="prayers-time">
+                    <ul>
+                        <li>
+                            <h5>fajr :</h5>
+                            <p>06:10 (CET)</p>
+                        </li>
+                        <li>
+                            <h5>sunrise :</h5>
+                            <p>06:10 (CET)</p>
+                        </li> 
+                        <li>
+                            <h5>dhuhr :</h5>
+                            <p>06:10 (CET)</p>
+                        </li>
+                        <li>
+                            <h5>asr :</h5>
+                            <p>06:10 (CET)</p>
+                        </li>
+                        <li>
+                            <h5>maghrib :</h5>
+                            <p>06:10 (CET)</p>
+                        </li>
+                        <li>
+                            <h5>isha :</h5>
+                            <p>06:10 (CET)</p>
+                        </li>
+                    </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="data">
+                <form action="" >
+                    <div>
+                        <label for="country">country*</label>
+                        <input id="country" type="text" placeholder="example: england">
+                    </div>
+                    <div>
+                        <label for="city">city*</label>
+                        <input id="city" type="text" placeholder="example: london">
+                    </div>
+                    <div>
+                        <label for="year">year/month*</label>
+                        <input type="text" id="year" value="" readonly style="background-color: rgb(199, 199, 199); border: 2px solid rgb(141, 140, 140); cursor: no-drop;">
+                    </div>
+                    <div>
+                        <label for="day">day*</label>
+                        <input type="text" id="day" value="" readonly style="background-color: rgb(199, 199, 199); border: 2px solid rgb(141, 140, 140); cursor: no-drop;">
+                    </div>
+                    <input id="submit" value="get prayers time" type="button">
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    function checkData(){
+        let inputs = document.getElementsByTagName("input")
+        let button = document.getElementById("submit")
+        let warning = document.querySelector(".calendar .error")
+        let date = new Date()
+        let currentYear = date.getFullYear()
+        let currentMonth = date.getMonth()
+        let currentDay = date.getDate()
+        inputs[2].value = `${currentYear}/${currentMonth+1}`
+        inputs[3].value = `${currentDay}`
+        button.onclick = function(){
+            if(inputs[0].value !== "" && inputs[1].value !== ""){
+                let url = `https://api.aladhan.com/v1/calendarByCity/${currentYear}/${currentMonth+1}?city=${inputs[1].value.trim()}&country=${inputs[0].value.trim()}`
+                axios.get(url).then((response)=>{
+                    let data = response.data.data
+                    let dataDiv = document.querySelector(".calendar .container .data")
+                    dataDiv.style = "display:none;"
+                    let timesDiv = document.querySelector(".calendar .container .times")
+                    let childOfTimesDiv = document.querySelector(".calendar .container .times div")
+                    timesDiv.style = "display:flex;"
+                    let go = document.querySelector(".calendar .container .go")
+                    go.style = "display:inline-block;"
+                    let prayerTimesArray = [
+                        {name:"fajr" , time:data[currentDay-1].timings.Fajr},
+                        {name:"sunrise" , time:data[currentDay-1].timings.Sunrise},
+                        {name:"dhuhr" , time:data[currentDay-1].timings.Dhuhr},
+                        {name:"asr" , time:data[currentDay-1].timings.Asr},
+                        {name:"maghrib" , time:data[currentDay-1].timings.Maghrib},
+                        {name:"isha" , time:data[currentDay-1].timings.Isha}
+                    ]
+                    childOfTimesDiv.children[0].innerHTML = data[currentDay-1].date.readable
+                    childOfTimesDiv.children[1].children[0].innerHTML =""
+                    for(let i = 0 ; i < prayerTimesArray.length ;i++){
+                        let content = `
+                            <li>
+                                <h5>${prayerTimesArray[i].name} :</h5>
+                                <p>${prayerTimesArray[i].time}</p>
+                            </li>
+                    `
+                    childOfTimesDiv.children[1].children[0].innerHTML +=content
+                    }
+                    go.onclick = function(){
+                        timesDiv.style = "display:none;"
+                        go.style = "display:none;"
+                        dataDiv.style = "display:grid;"
+                    }
+                }).catch((error)=>{
+                    warning.children[1].innerHTML = error.response.data.data
+                    warning.classList.add("show")
+                    for(input of inputs){
+                        input.onkeyup = function(){
+                            warning.classList.remove("show")
+                        }
+                    }
+                })
+            }
+            else if(inputs[0].value == "" && inputs[1].value !== ""){
+                warning.children[1].innerHTML = 'enter country !'
+                warning.classList.add("show")
+                for(input of inputs){
+                    input.onkeyup = function(){
+                        warning.classList.remove("show")
+                    }
+                }
+            }
+            else if(inputs[0].value !== "" && inputs[1].value == ""){
+                warning.children[1].innerHTML = 'enter city !'
+                warning.classList.add("show")
+                for(input of inputs){
+                    input.onkeyup = function(){
+                        warning.classList.remove("show")
+                    }
+                }
+            }
+            else{
+                warning.classList.add("show")
+                for(input of inputs){
+                    input.onkeyup = function(){
+                        warning.classList.remove("show")
+                    }
+                }
+            }
+        }
+    }
+    checkData()
+</script>
+</html>

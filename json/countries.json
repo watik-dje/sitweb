@@ -1,0 +1,90 @@
+[
+    {
+        "id": 1,
+        "country" : {
+            "name": "Algeria",
+            "name_ar": "الجزائر",
+            "cities": ["Algiers", "Blida","Constantine","Oran","Bejaia","Tamanrasset"],
+            "cities_ar": ["الجزائر العاصمة","بليدة","قسنطينة","وهران","بجاية" , "تمنراست"],
+            "mosque_src" : "Algeria.mp4",
+            "code" : "DZ"
+        }
+    },
+    {
+        "id": 2,
+        "country" : {
+            "name": "Morocco",
+            "name_ar": "المغرب",
+            "cities": ["Tanga" , "Casablanca" , "Marrakech" , "Agadir" , "Meknes" , "Rabat"],
+            "cities_ar": ["طنجة","كازابلانكا","مراكش","أغادير","مكناس" , "الرباط"],
+            "mosque_src" : "Morocco.mp4",
+            "code" : "MA"
+        }
+    },
+    {
+        "id": 3,
+        "country" : {
+            "name": "Tunisia",
+            "name_ar": "تونس",
+            "cities": ["Tunis" , "Sousse" , "Bizerte" , "Kairouan" ,"Sfax" , "Kasserine"],
+            "cities_ar": ["تونس العاصمة", "سوسة","بنزرت","القيروان","صفاقس","القصرين"],
+            "mosque_src" : "Tunisia.mp4",
+            "code" : "TN"
+        }
+    },
+    {
+        "id": 4,
+        "country" : {
+            "name": "Indonesia",
+            "name_ar": "أندونيسيا",
+            "cities": ["Jakarta","Bali","Yogyakarta","Bandung","Mandalay","Boçak"],
+            "cities_ar": ["جاكارتا","بالي","يوجي كارتا","باندونج","ماندالاي","بوتشاك"],
+            "mosque_src" : "Indonesia.mp4",
+            "code" : "ID"
+        }
+    },
+    {
+        "id": 5,
+        "country" : {
+            "name": "Palestine",
+            "name_ar": "فلسطين",
+            "cities": ["Gaza","Jerusalem","Nablus","Safed","Haifa","Bethlehem"],
+            "cities_ar": ["غزة","القدس","نابلس","صفد","حيفا","بيت لحم"],
+            "mosque_src" : "Palestine.mp4",
+            "code" : "PS"
+        }
+    },
+    {
+        "id": 6,
+        "country" : {
+            "name": "Saudi Arabia",
+            "name_ar": "السعودية",
+            "cities": ["mecca","AL Madinah","Riyadh","Jeddah","Tabouk","Taif"],
+            "cities_ar": ["مكة","المدينة المنورة","الرياض","جدة","تبوك","الطائف"],
+            "mosque_src" : "Saudi Arabia.mp4",
+            "code" : "SA"
+        }
+    },
+    {
+        "id": 7,
+        "country" : {
+            "name": "Turkey",
+            "name_ar": "تركيا",
+            "cities": ["Istanbul","Antalya","Bursa","Trabzon","Bodrum","Sakarya"],
+            "cities_ar": ["إسطنبول","أنطاليا","بورصة","طرابزون","بودروم","سكاريا"],
+            "mosque_src" : "Turkey.mp4",
+            "code" : "TR"
+        }
+    },
+    {
+        "id": 8,
+        "country" : {
+            "name": "France",
+            "name_ar": "فرنسا",
+            "cities": ["Paris","Monaco","Marseille","Bordeaux","Toulouse","Lille"],
+            "cities_ar": ["باريس","موناكو","مارسيليا","بوردو","تولوز","ليل"],
+            "mosque_src" : "France.mp4",
+            "code" : "FR"
+        }
+    }
+]
