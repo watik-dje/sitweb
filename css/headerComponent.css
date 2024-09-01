@@ -567,7 +567,7 @@ ul{
         right: 0;
     }
     .sections header .container .links > div .list{
-        width: calc(100% + 50px);
+        width: calc(100% + 80px);
     }
     .sections header .container .location .earth .list::before{
         right: 8px;
@@ -604,9 +604,16 @@ ul{
     .sections header .container .links div {
         margin: 0 0 0 10px;
     }
+    .sections header .container .links > div .list{
+        width: calc(100% + 60px);
+    }
+    .sections header .container .links > div .list li:hover{
+        margin-left: 0;
+    }
     .sections header .container .links > div .list li a,
     .sections header .container .links > div .list li i{
-        font-size: 11px;
+        font-size: 12px;
+        padding: 5px 0;
     }
     .sections .effects .main-title .title{
         font-size: 1em;
