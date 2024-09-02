@@ -202,6 +202,7 @@ ul{
 .calendar .error.show{
     opacity: 1;
     top: 0;
+    z-index: 1000;
 }
 .calendar .error i ,
 .calendar .error h3{
@@ -215,5 +216,11 @@ ul{
 .calendar .error i{
     margin-right: 5px;
     color: #8d0000;
+}
+@media (max-width : 500px) {
+    .calendar .error i ,
+    .calendar .error h3{
+    font-size: 14px;
+}
 }
 /* end data */
