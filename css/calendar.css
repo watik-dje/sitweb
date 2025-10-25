@@ -220,7 +220,7 @@ ul{
 @media (max-width : 500px) {
     .calendar .error i ,
     .calendar .error h3{
-    font-size: 14px;
+    font-size: 13px;
 }
 }
 /* end data */
